@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-
+import './index.css'
+import Calendar from './components/Calendar.js'
+//import Modal from 'react-modal';
+//Modal.setAppElement('#root');
+import {  Route, Routes } from "react-router-dom";
+import AddEvent from './components/AddEvent.js'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">   
+
+<Routes>
+        <Route exact path="/" element={((<App />), (<Calendar/>))}></Route> 
+        <Route path="/addevent" element={<AddEvent/>}></Route>    
+       
+      </Routes>
     </div>
   );
 }
